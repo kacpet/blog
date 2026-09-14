@@ -1,0 +1,101 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 8,
+  title: 'Day 8',
+  date: '2026-09-13',
+  description: 'eight day, of daily',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today I slept almost for a whole day, becouse of how tired I was I
+          planed to learn english and Next.js but I decided to configurate
+          Enveirment for programing at my Ipad(by downloading Linux) andi It
+          didn't go well, I think my old Ipad is not ready for this, and my
+          skills, also didn't helps me, I hate the fact it takes my rest of the
+          day and I stil didn't finish it, but at least I could rest
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        I'll definitly configurate linux at my Ipad, and after this I'll learn
+        Next.js, I hope it'll work
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 2/10, I slept for too long, and I didn't do anything, it
+          could be 1 but I learn a bit how to install and configurate Linux at
+          Ipad
+        </p>
+      </div>
+    </section>
+    <DayRating class="w-full" rating={2} />
+  </article>
+</Layout>
