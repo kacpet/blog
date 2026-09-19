@@ -1,0 +1,108 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 9,
+  title: 'Day 9',
+  date: '2026-09-14',
+  description: 'Ninth day, of daily',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Unfortunatly, I didn't write my blog for a few days, When I writing
+          It, It's already 16.09, so I'll write from my memory, It was probably
+          a day in which I finally installed linux at my old Ipad, I think it's
+          quite funny expirience, becouse, it somehow working but when I tried
+          to install Visual Studio Code, It's just editor for coding, only
+          reason why I needed Linux was to install this program, I even find a
+          way to install it from terminal,In process I even connected keyboard,
+          becouse Virtual keaboard cover almost whole screen but I needed to
+          confirm that what I wrote is writen, and I somehow did It I even
+          installed about 60% of vsc, but then my linux crashed and after that,
+          Linux stoped working(I gave linux 30GB so It couldn't be becouse of
+          memeory), probably my Ipad was tooo bad to run it correctly. But at
+          least I learn how to do it, I hope It'll work at my new Ipad, I didn't
+          expect from this ipad that much, So I'm happy that I did it
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        It's a bit weird to write plan for yesterday, sooo, I have no plan for
+        tomorrow
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 3/10, I installed Linux as I planed, but I didn't learn
+          Next.js, and I didn't even write blog
+        </p>
+      </div>
+    </section>
+    <DayRating class="w-full" rating={3} />
+  </article>
+</Layout>
