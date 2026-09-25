@@ -1,0 +1,108 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 18,
+  title: 'Day 18',
+  date: '2026-09-23',
+  description: 'eighteenth day, of daily',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, I was late 2min for a work transport, so I needed to get a free
+          day,I get new haircut I will send images how I look, and how I should
+          look like. I was also with my dad at a barbeque. After that we watched
+          netflix series together, and I went to sleep. It was tired because I
+          watched movie yesterday to about 4 a.m. but I count it like yesterday
+          because, sleep is separator for me, when I count my days.Not the best
+          day when I read that.
+        </p>
+      </section>
+      How I should look:
+      <img src={`${import.meta.env.BASE_URL}/day18/other.png`} />
+
+      How I look:
+      <img src={`${import.meta.env.BASE_URL}/day18/me.png`} />
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        It'll be my last day at work so, I want to finish Witcher that I
+        started, I also want to start reading books before going to sleep, and
+        I'll spend time with my family because it'll be also last day at home,
+        and I'll go at training (so I don't have that much time work(5;45-18)
+        training (20-22)) I don't think I can do much more
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 2/10, at least I got new haircut, and spend time with family
+        </p>
+        <DayRating class="w-full" rating={2} />
+      </div>
+    </section>
+  </article>
+</Layout>
