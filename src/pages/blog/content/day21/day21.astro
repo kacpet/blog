@@ -1,0 +1,106 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 21,
+  title: 'Day 21',
+  date: '2026-09-26',
+  description: 'PŁ Integration day',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, after I ate brekfast, I went for a meeting I created yesterday,
+          and with group we together come to EEIA, and senior students show us a
+          few clubs and buildings, there was also a game for first-year students
+          where we needed to answer questions(6), it takes 9-16 (7h), after that
+          we could go drink with other students and play games, but, I didn't
+          participate in this activity, so I return to dormitorium and started
+          preparing sour rye soup, the cheapest posible variant, I needed to buy
+          ingredients for recipe,a knive and a ladle. It also takes some time, I
+          also offered at group, a badminton activity with me, I found one
+          interested, but I'll see how It'll look, we were writing for a while,
+          and I wrote blog, and I read book before sleep
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        I don't think I need to do anthing tomorrow, thats great, I'll learn
+        programing for a whole day,cook something and read book before sleep
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 3/10, I feel like I wasted this day becouse I didn't do
+          anything important,but I was busy almos whole day, meybe my time
+          managment is wrong
+        </p>
+        <DayRating class="w-full" rating={5} />
+      </div>
+    </section>
+  </article>
+</Layout>
