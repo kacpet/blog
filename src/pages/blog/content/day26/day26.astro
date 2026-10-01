@@ -1,0 +1,109 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 26,
+  title: 'Day 26',
+  date: '2026-09-30',
+  description: 'First day, of learning in PŁ',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, I wake up ate breakfast, and I went to "Biedronka" to buy some
+          food, Earlier I saw that this shop is open from 6:00 am, but It was
+          closed, so I needed to go to other "Biedronka" shop, after I reaturned
+          to dormitory, I went to PŁ, becouse I didn't know where is my class,
+          so I needed go early, to find it in time, after that I went to my
+          class, and I met my teachers, they are very nice, and I hope I'll
+          learn a lot of things from them, after that I went to dormitory, from
+          what I wen to buy big Pan, becouse recently I saw that I need one more
+          Pan, I trided to make waffles, but I't went wrong, I don't know why,
+          I'll try to make them better next time, after that I learn math a bit
+          after that,I found offer of a gaming chair, and I bring it to my
+          dormitory, It's very comfortable, now I can sit longer and do some
+          producive things, I made dinner and read book before I went to sleep
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        Tomorrow I have my first lab classes, I'm curious how it will be, I know
+        It's very important, so I'll try my best.+ I'll try to make this
+        course....... My gosh, I thought I'd made it quicker, but It's becouse I
+        don't like that way he learns, so It's hard to sit to do this
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 3/10, I bring important things to dormitory, and learn at
+          studies
+        </p>
+        <DayRating class="w-full" rating={3} />
+      </div>
+    </section>
+  </article>
+</Layout>
