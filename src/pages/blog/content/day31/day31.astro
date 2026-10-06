@@ -1,0 +1,103 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 31,
+  title: 'Day 31',
+  date: '2026-10-6',
+  description: 'I set a new shelf',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, I only had math lesson, It takes 3h of my day, also my grop was
+          removed so I needed to choose my new group I choose 4-th ;;, I also
+          meet hung, and I register us for a douubles, I think we can win this
+          tournament, I also found a new UI/UX course, I started it, but the
+          most important thing is a shelf I finnaly added to my desk, I had
+          diffrent plan a bit, but It's still fine
+        </p>
+      </section>
+    </div>
+    Image of shelf here:
+    <img src={`${import.meta.env.BASE_URL}/day31/shelf.png`} />
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        Tomorrow, I have a free day, so I'll try to end UI/UX course I started,
+        and, I also have reservation for badminton so I'll go, I also want to
+        read part of book
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 4/10, I created shelf and it was my main achivment today,
+          but I also did some other things
+        </p>
+        <DayRating class="w-full" rating={4} />
+      </div>
+    </section>
+  </article>
+</Layout>
