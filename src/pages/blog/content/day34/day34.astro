@@ -1,0 +1,107 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 34,
+  title: 'Day 34',
+  date: '2026-10-9',
+  description: 'I got a lock for my bike, AZS',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today,I had 4h of lessons planned but It taked only 1h, after that I
+          washed my clothes and after this I found a lock to my new bike, so I
+          needed to ride 10km to get it, and get back, I made pasta(it was
+          great), and becouse I ate too much I went to sleep for a moment
+          becouse I had AZS planned for today, Idk why but only 4 people were
+          there, 4 with me , and trainer was absent, I thought the lvl of AZS
+          could be weak but not like this, I destroyed everyone with my left
+          hand, after training I invited my friend to AZS, maybe she'll join and
+          I was writing with my friends, and with my first participant in Lodz,
+          I also corrected my poster. not long after I went sleep
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        I want to print and laminate my poster, and hang it on the hall wall at
+        least 2 , I also have training at 19;30, and I need to learn her at
+        least how to serve, becouse she want to learn this, I need to buy some
+        food, and I want to create a site for badminton, but before that I need
+        to end course I started earlier.
+      </p>
+    </section>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 3/10, Idk why but I was tired all day, so I couldn't
+          motivate my body to do something, but It wasn't a bad day
+        </p>
+        <DayRating class="w-full" rating={3} />
+      </div>
+    </section>
+  </article>
+</Layout>
