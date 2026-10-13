@@ -1,0 +1,106 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 38,
+  title: 'Day 38',
+  date: '2026-10-13',
+  description: 'My free training at VeraSport',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, i ate breakfast, I made some sandwitches, I started learning
+          about Coplex numbers becouse I was thinking thst It'll be at todays
+          lesson, but suprisly It wasnt, so I learned for nothing, earlier my
+          headphones stopped working so I needed to fix it, I did it but even
+          now Idk why record setting repaired my headphones, after this
+          everything I went for math, there was a new teacher and I was
+          suprised, but I think this teacher is also good, after marh I made a
+          dinner and not long after I ate it I went for a free badminton at
+          VeraSport It was better than I expected, I won against everyone
+          expected trainer becouse she's the best woman player i play against.
+          It was really fun, and I hope I'll get a chance to play with them
+          regulary
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow, I'll prepare for materials, I also want to, watch
+        part of course becouse I didn't done this today, and I'll go for studies
+        and after I have badminton planed with dung, and I need to recive my
+        rocket somehow from decatlon
+
+        <p></p>
+      </h2>
+
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          How I rate this day
+        </h2>
+        <div class="space-y-4">
+          <p>
+            I'll give 4/10, I couldn't do more, I did a lot, but was it
+            valuable? thats why I cant give 5
+          </p>
+          <DayRating class="w-full" rating={4} />
+        </div>
+      </section>
+    </section>
+  </article>
+</Layout>
