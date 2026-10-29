@@ -1,0 +1,104 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 50,
+  title: 'Day 50',
+  date: '2026-10-28',
+  description: 'Fail',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, It was the day when I should pass alghotritms, I learned for
+          last 3 days about matplotlib , that teacher said We need to know, but
+          when I come to lesson, she said, that we need to know mathematic
+          formula, about I never heard ealier, so I didn't even tried to pass
+          alghoritms today, but it's fine, I think it can be even better for me
+          to come to her classes, But this day was one of the hardest day I had
+          in Lodz, becouse I only ate breakfast till 7pn, and not long after I
+          had a badminton training as instructor, lucily everything went well
+        </p>
+      </section>
+    </div>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        I'll prepare for math, and I need to end chemistry project becouse its
+        last day to do that, I also have a badminoton training, and meybe read a
+        book or something like that
+      </p>
+
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          How I rate this day
+        </h2>
+        <div class="space-y-4">
+          <p>
+            I'll give 1/10 I feel like this day, was my fault, I should make
+            dinner earlier and bring it with me + I wasted a lot of time to
+            learn alghoritms and I didnt pass them + I maed a rly bad training as an instructor
+          </p>
+          <DayRating class="w-full" rating={1} />
+        </div>
+      </section>
+    </section>
+  </article>
+</Layout>
