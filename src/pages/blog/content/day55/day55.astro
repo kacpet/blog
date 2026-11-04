@@ -1,0 +1,112 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 55,
+  title: 'Day 55',
+  date: '2026-10-31',
+  description: 'visinting cementary day 1',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <divh class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today,I wake up early and I made breakfast for me and my family , I
+          also spend some time with them when we wathched a "you" , We started
+          together, and we are still at the same ep, It's great, after we
+          watched some episodes, we visited cementary and grandma, and I also
+          meet my aunnt and cousin, so it was quite fun we were there for a
+          moment, and we returned, in Car my brother recommended me a book about
+          hell and books, I don't remember title, but It the most important
+          things, I even can say I'll end this book tommorrow(becouse It already
+          happend) We also were in shop to buy usefull things for live in Lodz
+          after that we returned , and we were watching this series still( he
+          finally got a girlfriend like him )
+
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width" />
+              <meta name="generator" content={Astro.generator} />
+              <title>Document</title>
+            </head>
+            <body> </body>
+          </html>
+        </p>
+      </section>
+    </divh>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>I didnt have any plans for next few days, i'm writing it 4.11</p>
+
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          How I rate this day
+        </h2>
+        <div class="space-y-4">
+          <p>
+            I'll give 3/10, becouse I readed book form my brother, and I count
+            reading like something good
+          </p>
+          <DayRating class="w-full" rating={3} />
+        </div>
+      </section>
+    </section>
+  </article>
+</Layout>
