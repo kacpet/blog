@@ -1,0 +1,116 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 64,
+  title: 'Day 64',
+  date: '2026-11-09',
+  description: 'hard working',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <divh class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, I had lessons from wednesday, and its a day when I have lessons
+          from 12 to 19, before lessons, I made breakfast and dinner and launch,
+          and prepare to lessons, I went for them on time and nothing special
+          happend on them, in break I ate launch and made second dinner, and I
+          went for next lessons, after them I made all tasks we have to made, so
+          after I ended, I didn't have anything more to do for studies, so I
+          continued reading book about time managment, I wrote plan for next
+          day, and this plan is periodic, I needed something like this, becouse
+          earlier I used free verion of structured, It looks better, but I
+          couldn't make cyclic tasks so I changed to google calendar I hope
+          it'll be good
+
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width" />
+              <meta name="generator" content={Astro.generator} />
+              <title>Document</title>
+            </head>
+            <body> </body>
+          </html>
+        </p>
+      </section>
+    </divh>
+
+    <!-- Section -->
+    <section class="py-5">
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Plans for tomorrow
+      </h2>
+
+      <p>
+        I have two trainings tomorrow, and only one lesson , so I still have a
+        lot of time to learn something, I'll continue this book for sure and
+        I'll continue learning ROS2
+      </p>
+
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          How I rate this day
+        </h2>
+        <div class="space-y-4">
+          <p>
+            I'll give 6, I did everything I wanted to do today, exactly as I
+            planned so I really like the way this day looks
+          </p>
+          <DayRating class="w-full" rating={6} />
+        </div>
+      </section>
+    </section>
+  </article>
+</Layout>
