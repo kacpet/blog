@@ -1,0 +1,108 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 68,
+  title: 'Day 68',
+  date: '2026-11-13',
+  description: 'back to home',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <divh class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          today as always I only had chemistry, after this I needed to go
+          directly to train station, and I was in train for next 5h and I
+          downloaded series for this ride, so It was relativly fast experience
+          for me, when I arived my mum taked me from station to shop to bought
+          food for tournament and we packed, I ate dinner and went sleep earlier
+          becouse I wanted tot be in the best condition at tournament
+        </p>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta name="generator" content={Astro.generator} />
+            <title>Document</title>
+          </head>
+          <body> </body>
+        </html>
+      </section>
+    </divh>
+  </article>
+
+  <!-- Section -->
+  <section class="py-5">
+    <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+      Plans for tomorrow
+    </h2>
+
+    <p>
+      I'll be at tournament and I plan to try my best to win this, and If we'll
+      have time we'll go to my grandmother
+    </p>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 1, It's not like I wanted to do something today, but I could, so It's 1 
+        </p>
+        <DayRating class="w-full" rating={1} />
+      </div>
+    </section>
+  </section>
+</Layout>

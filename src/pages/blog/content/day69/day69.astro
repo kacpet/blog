@@ -1,0 +1,111 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 69,
+  title: 'Day 69',
+  date: '2026-11-14',
+  description: 'tournament',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <divh class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          I played tournament today..., I almost forgot How lossing hurts my
+          feelings, I only won one match, and he was much worse than me but I
+          almost lose, so I was angry about how I played this match, next single
+          match, was even worse, becouse I lose, but I almost gave up this game,
+          I think, It'd be better If I'd do like this, but I lose and I show
+          everyone how bad at loosing I'm, It was Pathetic, I get out of the
+          group and I played with my friend Dawid, and I didn't even focus in
+          this game, but becouse of this I feelt great even after lose, I
+          decided to train much more to win with everyone without any efort, I
+          also visited grandma
+        </p>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta name="generator" content={Astro.generator} />
+            <title>Document</title>
+          </head>
+          <body> </body>
+        </html>
+      </section>
+    </divh>
+  </article>
+
+  <!-- Section -->
+  <section class="py-5">
+    <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+      Plans for tomorrow
+    </h2>
+
+    <p>I'll spend time with family and I'll return to Lodz and I want to made chemistry homework</p>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give -5, It was one of the worst day becouse of how I reacted to
+          lossing, I think It'd better if it wont happend but It'll be lesson
+          for future
+        </p>
+        <DayRating class="w-full" rating={0} />
+      </div>
+    </section>
+  </section>
+</Layout>
