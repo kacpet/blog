@@ -1,0 +1,114 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import DayRating from '../../rateDay/rateDay.astro'
+
+export const post = {
+  day: 79,
+  title: 'Day 79',
+  date: '2026-11-24',
+  description: 'easy valuable day',
+  category: 'Daily',
+  tags: ['Astro', 'Tailwind CSS', 'Web Development'],
+}
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-6 pb-24 pt-32">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 text-sm">
+        <span
+          class="font-medium uppercase tracking-widest text-[var(--secondary)]"
+        >
+          {post.category}
+        </span>
+
+        <span class="text-[var(--border)]">/</span>
+
+        <span class="text-[var(--muted)]">
+          Day {post.day}
+        </span>
+      </div>
+
+      <h1
+        class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        {post.title}
+      </h1>
+
+      <p class="mt-5 text-sm text-[var(--muted)]">
+        {
+          new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }
+      </p>
+
+      <p
+        class="mt-8 border-l-2 border-[var(--secondary)] pl-5 text-lg leading-8 text-[var(--muted)] sm:text-xl"
+      >
+        {post.description}
+      </p>
+    </header>
+
+    <!-- Content -->
+    <divh class="space-y-14 leading-8">
+      <!-- Section -->
+      <section>
+        <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+          What I did today?
+        </h2>
+        <p>
+          Today, I only had math from lessons, and we had derivative,
+          so it was quite easy I think, I had this in secondary school,
+          I also readed book, made some new flascards to anki and reviewed,
+          every I alreday had, I also learned math for me not connected to studies,
+          I also was at badminton training, and ofc I made raptors task I planed to made
+          I also write blog, recently, I started wrinting on Ipad, becouse, I think,
+          this task is easy and I don't need computer to write It, and Ipad is more 
+          comfortable, becouse I can write this blog in bed not at chair,
+          tomorrow I have exam, It should be easy so I'll read a bit tomorrow
+        </p>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta name="generator" content={Astro.generator} />
+            <title>Document</title>
+        </head>
+          <body> </body>
+        </html>
+      </section>
+    </divh>
+  </article>
+
+  <!-- Section -->
+  <section class="py-5">
+    <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+      Plans for tomorrow
+    </h2>
+
+    <p>I need to read something before exam, It's possible to pass without learning, but I don't want to risk
+     I also want to learn phisics, and meybe if raptors'll make task I'll do it, if they don't
+     I'll spent this time on learning basics of ROS2, I also watn to continuse book
+     I readed today, this book is wroten in english, and reading when I need to check, 
+     10 words per page its frustrating, but I pick interesting story so it should be fine
+    </p>
+
+    <!-- Section -->
+    <section>
+      <h2 class="mb-5 text-2xl font-semibold tracking-tight sm:text-3xl">
+        How I rate this day
+      </h2>
+      <div class="space-y-4">
+        <p>
+          I'll give 6, I think this day was almost perfect, but becouse I don't want to set this as my limit
+          I'll give only 6, meybe next time,I'll make more with the same time
+        </p>
+        <DayRating class="w-full" rating={6} />
+      </div>
+    </section>
+  </section>
+</Layout>
